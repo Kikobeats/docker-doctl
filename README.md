@@ -2,10 +2,6 @@
 
 > A docker image for deploying to DigitalOcean kubernetes.
 
-## Prerequisites
-
-The variable [DIGITALOCEAN_ACCESS_TOKEN](https://github.com/digitalocean/doctl#authenticating-with-digitalocean) should be exposed in order to authenticate `doctl`.
-
 ## Getting Started
 
 ### GitLab
@@ -34,7 +30,9 @@ deploy:
     - ./bin/deploy
 ```
 
+## Environment Variables
 
+- [`DIGITALOCEAN_ACCESS_TOKEN`](https://github.com/digitalocean/doctl#authenticating-with-digitalocean): The variable  should be exposed in order to authenticate `doctl`.
 
 ## License
 
