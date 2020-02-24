@@ -1,6 +1,6 @@
 FROM docker
 
-ENV DOCTL_VERSION=v1.38.0
+ENV DOCTL_VERSION=1.38.0
 
 # basics dependencies
 RUN apk add --no-cache -q curl openssh openssl sshpass jq bash nano
