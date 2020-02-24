@@ -7,4 +7,5 @@ RUN apk add --no-cache -q curl openssh openssl sshpass jq bash nano
 RUN curl -fsL https://git.io/get_helm.sh | bash
 
 # installing `doctl`
-CMD ["./doctl.sh"]
+COPY doctl.sh /
+RUN ./doctl.sh
