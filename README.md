@@ -6,6 +6,36 @@
 
 The variable [DIGITALOCEAN_ACCESS_TOKEN](https://github.com/digitalocean/doctl#authenticating-with-digitalocean) should be exposed in order to authenticate `doctl`.
 
+## Getting Started
+
+### GitLab
+
+Suggested configuratin for deploying any new release to `my-cluster-name` cluster.
+
+```yaml
+deploy:
+  stage: deploy
+  only:
+    - tags
+  image: kikobeats/docker-doctl
+  variables:
+    DOCKER_DRIVER: overlay2
+  services:
+    - docker:dind
+  before_script:
+    # initialize `doctl`
+    - doctl kubernetes cluster kubeconfig save my-cluster-name
+    # initialize `helm`
+    - helm init --client-only
+    # initialize `docker`
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  script:
+    - ./bin/publish
+    - ./bin/deploy
+```
+
+
+
 ## License
 
 **docker-doctl** © [Kiko Beats](https://kikobeats.com), released under the [MIT](https://github.com/Kikobeats/docker-doctl/blob/master/LICENSE.md) License.<br>
