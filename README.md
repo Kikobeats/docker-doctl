@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-The variable [DIGITALOCEAN_ACCESS_TOKEN](https://github.com/digitalocean/doctl#authenticating-with-digitalocean) should be exposed in order to authenticate doctl.
+The variable [DIGITALOCEAN_ACCESS_TOKEN](https://github.com/digitalocean/doctl#authenticating-with-digitalocean) should be exposed in order to authenticate `doctl`.
 
 ## License
 
