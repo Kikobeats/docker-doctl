@@ -1,12 +1,12 @@
 FROM docker
 
-ENV DOCTL_VERSION=1.38.0
+ENV DOCTL_VERSION=1.39.0
 
 # basics dependencies
 RUN apk add --no-cache -q curl openssh openssl sshpass jq bash nano
 
-# install `helm v2.x`
-RUN curl -fsL https://git.io/get_helm.sh | bash
+# install `helm v3.x`
+RUN curl -fsL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 
 # install `doctl v1.x`
 ENV DOCTL_VERSION=1.38.0
