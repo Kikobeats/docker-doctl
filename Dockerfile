@@ -1,7 +1,7 @@
 FROM docker
 
 # basics dependencies
-RUN apk add --no-cache -q curl openssl sshpass jq bash npm nodejs-current
+RUN apk add --no-cache -q curl jq bash npm nodejs-current
 
 # install `helm v3.x`
 RUN curl -fsL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
