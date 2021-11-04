@@ -11,3 +11,6 @@ RUN DOCTL_VERSION=$(curl -s https://api.github.com/repos/digitalocean/doctl/rele
     && curl -fsLO https://github.com/digitalocean/doctl/releases/download/v${DOCTL_VERSION}/doctl-${DOCTL_VERSION}-linux-amd64.tar.gz \
     && tar -xzf "doctl-${DOCTL_VERSION}-linux-amd64.tar.gz" -C /usr/local/bin \
     && rm "doctl-${DOCTL_VERSION}-linux-amd64.tar.gz"
+
+# install `zx` interpreter
+RUN npm install -g zx
