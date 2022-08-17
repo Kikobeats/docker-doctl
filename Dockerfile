@@ -13,4 +13,4 @@ RUN DOCTL_VERSION=$(curl -s https://api.github.com/repos/digitalocean/doctl/rele
     && rm "doctl-${DOCTL_VERSION}-linux-amd64.tar.gz"
 
 # install `zx` interpreter
-RUN npm install -g zx-cjs
+RUN npm install -g pnpm zx-cjs
