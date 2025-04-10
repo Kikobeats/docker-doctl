@@ -12,5 +12,7 @@ RUN DOCTL_VERSION=$(curl -s https://api.github.com/repos/digitalocean/doctl/rele
     && tar -xzf "doctl-${DOCTL_VERSION}-linux-amd64.tar.gz" -C /usr/local/bin \
     && rm "doctl-${DOCTL_VERSION}-linux-amd64.tar.gz"
 
-# install `zx` interpreter
-RUN npm install -g pnpm zx
+# install `kubectl`
+RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" \
+    && install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl \
+    && rm kubectl
